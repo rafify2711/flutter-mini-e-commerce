@@ -30,7 +30,7 @@ run :flutter run
 
 ##  Folder Structure
 
-
+`````
 lib/
 ├── core/ # Core utilities and shared modules
 │ ├── di/ # Dependency Injection setup (get_it, injectable)
@@ -53,8 +53,7 @@ lib/
 │
 └── main.dart # App entry point
 
-
-
+`````
 ## Architecture Layers
 
 - Data Layer: Handles API communication and model conversion.
