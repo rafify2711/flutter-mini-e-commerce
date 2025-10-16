@@ -30,28 +30,26 @@ run :flutter run
 
 ## Folder Structure
 lib/
-├── core/
-│   ├── di/                     # Dependency Injection setup (get_it, injectable)
-│   ├── utils/                  # App colors, text styles, constants
-│   ├─config/   
-│               ├── routes/                 # Route generator for navigation
-│   ├──api_manger
-│   └── widgets/                # Shared reusable UI widgets
-│   
-├── features/
-│   ├── home/
-│   │   ├── data/               # API models, repositories
-│   │   ├── domain/             # Entities, use cases, repository interfaces
-│   │   └── presentation/       # Home UI, Cubit, and widgets
-│   │
-│   └──  cart/
-│       ├── data/               # Local cart management logic
-│   │   ├── domain/             # Entities and business rules
-│   │   └── presentation/       # Cart UI and Cubit
+├── core/ # Core utilities and shared modules
+│ ├── di/ # Dependency Injection setup (get_it, injectable)
+│ ├── utils/ # App constants, colors, text styles
+│ ├── config/
+│ │ └── routes/ # Route generator for navigation
+│ ├── api_manager/ # API handling (Dio, Retrofit)
+│ └── widgets/ # Shared reusable UI widgets
 │
+├── features/ # App features, each with its own layers
+│ ├── home/
+│ │ ├── data/ # API models, repositories
+│ │ ├── domain/ # Entities, use cases, repository interfaces
+│ │ └── presentation/ # Screens, Cubits, and widgets
+│ │
+│ └── cart/
+│ ├── data/ # Local cart management, repositories
+│ ├── domain/ # Entities, use cases
+│ └── presentation/ # Cart screens and Cubits
 │
-└── main.dart                
-
+└── main.dart # App entry point
 ## Architecture Layers
 
 - Data Layer: Handles API communication and model conversion.
