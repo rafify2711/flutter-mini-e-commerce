@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/core/widgets/app_button.dart';
@@ -31,15 +32,15 @@ class CheckoutSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Total Items
-            _buildRow("Total (${state.cartItems.length} Items)", "\$${state.totalPrice.toStringAsFixed(2)}"),
+            _buildRow("${'total'.tr()} (${state.cartItems.length} Items)", "\$${state.totalPrice.toStringAsFixed(2)}"),
             const SizedBox(height: 8),
 
             // Shipping Fee
-            _buildRow("Shipping Fee", "\$${shippingFee.toStringAsFixed(2)}"),
+            _buildRow("shipping_fee".tr(), "\$${shippingFee.toStringAsFixed(2)}"),
             const SizedBox(height: 8),
 
             // Taxes
-            _buildRow("Taxes", "\$${taxes.toStringAsFixed(2)}"),
+            _buildRow("taxes".tr(), "\$${taxes.toStringAsFixed(2)}"),
             const SizedBox(height: 50),
 
             // Divider
@@ -53,8 +54,8 @@ class CheckoutSection extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Total",
+                     Text(
+                      "total".tr(),
                       style: AppTextStyles.manropeSemiBold14,
                     ),
                     Text(
@@ -64,7 +65,7 @@ class CheckoutSection extends StatelessWidget {
                     ),
                   ],
                 ),
-                AppButton(onPress: (){}, text: "Checkout")
+                AppButton(onPress: (){}, text: "checkout".tr())
 
               ],
         )],

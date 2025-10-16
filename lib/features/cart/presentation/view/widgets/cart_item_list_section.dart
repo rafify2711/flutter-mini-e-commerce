@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
@@ -22,7 +23,7 @@ class CartItemListSection extends StatelessWidget {
               log("CartLoaded in cart screen: ${state.cartItems}");
               final cartList = state.cartItems;
               if (cartList.isEmpty){
-                return Center(child: Text("Cart is empty"));
+                return Center(child: Text("Cart_is_empty".tr()));
               }else{
               return SizedBox(
                 height: 350,
@@ -46,7 +47,7 @@ class CartItemListSection extends StatelessWidget {
               );
             }
             else{
-              return(Center(child: Text("Cant Load Cart")));
+              return(Center(child: Text("Cant_Load_Cart".tr())));
             }
 
           }

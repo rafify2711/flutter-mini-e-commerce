@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
 import 'package:flutter_task/core/utils/assets_name.dart';
@@ -24,7 +25,7 @@ class PopularBrandList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Popular Brands',
+            'Popular_Brands'.tr(),
             style: AppTextStyles.manropeSemiBold20.copyWith(color: AppColors.dark),
           ),
           const SizedBox(height: 12),

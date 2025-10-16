@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,10 +14,10 @@ class CustomBottomNavBar extends StatelessWidget {
   CustomBottomNavBar({super.key, required this.currentIndex, required this.onTap});
 
   final List<Map<String, dynamic>> items = [
-    {"icon": AssetsName.home, "label": "Home"},
-    {"icon": AssetsName.heart, "label": "Favorite"},
-    {"icon": AssetsName.shoppingBagIcon, "label": "Cart"},
-    {"icon": AssetsName.person, "label": "Profile"},
+    {"icon": AssetsName.home, "label": "home".tr()},
+    {"icon": AssetsName.heart, "label": "favorite".tr()},
+    {"icon": AssetsName.shoppingBagIcon, "label": "cart".tr()},
+    {"icon": AssetsName.person, "label": "profile".tr()},
   ];
 
   @override

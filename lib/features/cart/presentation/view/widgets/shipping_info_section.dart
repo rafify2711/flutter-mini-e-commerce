@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
 import 'package:flutter_task/core/utils/app_text_style.dart';
@@ -25,13 +26,13 @@ class _ShippingInfoSectionState extends State<ShippingInfoSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Shipping Information',style: AppTextStyles.manropeSemiBold20,),
+          Text('shipping_information'.tr(),style: AppTextStyles.manropeSemiBold20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: DropdownButton<String>(
               isExpanded: true,
               style: AppTextStyles.manropeSemiBold16.copyWith(color: AppColors.dark),
-              hint: Text('Choose a card'),
+              hint: Text('choose_a_card'.tr()),
               value: selectedCard,
               items: creditCards.map((card) {
                 return DropdownMenuItem<String>(

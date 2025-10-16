@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_task/core/config/routes_name.dart';
 import 'package:flutter_task/core/utils/assets_name.dart';
@@ -21,7 +22,7 @@ class CartScreenBody  extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.white,
         elevation: 0,
-        title: Text("Cart",style: AppTextStyles.manropeSemiBold20,),
+        title: Text("cart".tr(),style: AppTextStyles.manropeSemiBold20,),
         centerTitle: true,
         leading: Container(
           height: 50,

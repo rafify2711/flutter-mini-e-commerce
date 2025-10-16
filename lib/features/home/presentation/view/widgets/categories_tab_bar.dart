@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
@@ -29,9 +30,9 @@ class CategoriesTabBar extends StatelessWidget {
               children: [
                 const Icon(Icons.error_outline,color: AppColors.redEC, size: 48),
                 const SizedBox(height: 10),
-                const Text(
-                "Something went wrong",
-                  style: TextStyle(fontSize: 16, color: Colors.black87),
+                Text(
+                "Something_went_wrong".tr(),
+                  style: const TextStyle(fontSize: 16, color: Colors.black87),
                 ),
                 const SizedBox(height: 10),
                 AppButton(
@@ -40,7 +41,7 @@ class CategoriesTabBar extends StatelessWidget {
                       cubit.fetchCategories();
                       cubit.fetchProducts();
                   },
-                  text: "Retry",
+                  text: "retry".tr(),
                 ),
               ],
             ),

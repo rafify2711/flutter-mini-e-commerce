@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
@@ -50,7 +51,7 @@ class LocationSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Send To",
+                        "Send_To".tr(),
                         style: AppTextStyles.manropeSemiBold12.copyWith(
                           color: AppColors.dark52,
                         ),
@@ -78,10 +79,10 @@ class LocationSection extends StatelessWidget {
                               );
                             } else {
                               return Text(
-                                "Sorry, we can't detect your location",
-                                style: AppTextStyles.manropeSemiBold14.copyWith(
+                                "Something_went_wrong".tr(),
+                                style: AppTextStyles.manropeSemiBold12.copyWith(
                                   color: AppColors.redEC,
-                                ),
+                                ),maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               );
                             }
@@ -100,7 +101,7 @@ class LocationSection extends StatelessWidget {
                     backgroundColor: WidgetStateProperty.all(AppColors.blue),
                   ),
                   child: Text(
-                    "change",
+                    "change".tr(),
                     style: AppTextStyles.manropeSemiBold16.copyWith(
                       color: AppColors.white,
                     ),

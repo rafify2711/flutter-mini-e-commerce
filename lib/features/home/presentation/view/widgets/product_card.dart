@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -79,10 +80,10 @@ class ProductCard extends StatelessWidget {
                   onPress: () {
                     context.read<CartCubit>().addProduct(product);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Product added to cart')),
-                    );
+                       SnackBar(content: Text('Product_added_to_cart'.tr())
+                    ));
                   },
-                  text: "Add to Cart",
+                  text: 'Add_to_Cart'.tr(),
                 );
               },
             ),

@@ -1,87 +1,104 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class BannerWidget extends StatelessWidget {
- final String image;
- final String title;
- final String subtitle;
+  final String image;
+  final String title;
+  final String subtitle;
 
-   const BannerWidget({
+  const BannerWidget({
     super.key,
     required this.image,
-     required this.title,
-     required this.subtitle
+    required this.title,
+    required this.subtitle,
   });
 
   @override
   Widget build(BuildContext context) {
+    final bool isRtl =
+        Directionality.of(context) == ui.TextDirection.rtl;
+
     return Stack(
       children: [
         Container(
-          height: 150,
+          alignment: isRtl ? Alignment.centerRight : Alignment.centerLeft,
+          height: 166,
           margin: const EdgeInsets.all(8),
-          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
+            gradient: LinearGradient(
+              begin: isRtl ? Alignment.topLeft : Alignment.topRight,
+              end: isRtl ? Alignment.bottomRight : Alignment.bottomLeft,
+              colors: const [
                 AppColors.white,
                 AppColors.blue,
               ],
             ),
-            borderRadius: BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
-            boxShadow: [
-            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(isRtl ? 0 : 20),
+              bottomLeft: Radius.circular(isRtl ? 0 : 20),
+              topRight: Radius.circular(isRtl ? 20 : 0),
+              bottomRight: Radius.circular(isRtl ? 20 : 0),
+            ),
           ),
           child: Row(
             children: [
               Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment:
+                  isRtl ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
-                      style: AppTextStyles.manropeSemiBold18.copyWith(color: AppColors.white)
+                      style: AppTextStyles.manropeSemiBold18
+                          .copyWith(color: AppColors.white),
+                      textAlign: isRtl ? TextAlign.right : TextAlign.left,
                     ),
                     const SizedBox(height: 8),
                     SizedBox(
                       width: 150,
                       child: Text(
                         subtitle,
-                        style: AppTextStyles.manropeSemiBold16.copyWith(color: AppColors.white )
-                        )
+                        style: AppTextStyles.manropeSemiBold14
+                            .copyWith(color: AppColors.white),
+                        textAlign: isRtl ? TextAlign.right : TextAlign.left,
+                      ),
                     ),
-                    Spacer(),
-
-                    ElevatedButton(onPressed: (){},
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                         elevation: 0,
-
                       ),
-                      child:  Text(
-                        'Shop Now',
-                        style: AppTextStyles.manropeSemiBold14.copyWith(color: AppColors.blueD1),
-                        ),
+                      child: Text(
+                        'shop_now'.tr(),
+                        style: AppTextStyles.manropeSemiBold12
+                            .copyWith(color: AppColors.blueD1),
+                      ),
                     ),
                   ],
                 ),
               ),
-
             ],
           ),
         ),
         Positioned(
-          right: 5,
-          top: -20,
-          bottom: -5,
-          child:    Image.asset(image,height: 250,width: 220,),)
-       
+          right: -3,
+          top: -2,
+          bottom: 25,
+          child: Image.asset(
+            image,
+            height: 250,
+            width: 220,
+          ),
+        ),
       ],
     );
   }
