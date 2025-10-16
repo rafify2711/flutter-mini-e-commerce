@@ -10,7 +10,7 @@ class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  CustomBottomNavBar({required this.currentIndex, required this.onTap});
+  CustomBottomNavBar({super.key, required this.currentIndex, required this.onTap});
 
   final List<Map<String, dynamic>> items = [
     {"icon": AssetsName.home, "label": "Home"},
@@ -42,7 +42,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 children: [
                   SvgPicture.asset(
                     item["icon"],
-                    color: selected ? Colors.white : Colors.grey,
+                    color: selected ? AppColors.white : AppColors.dark52,
                     width: 20,
                     height: 20,
                   ),

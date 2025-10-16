@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_task/core/utils/app_colors.dart';
+import 'package:flutter_task/core/widgets/app_button.dart';
 import 'package:flutter_task/features/home/presentation/view/widgets/product_card.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/request_state.dart';
@@ -21,7 +22,31 @@ class CategoriesTabBar extends StatelessWidget {
         final showSkeleton = isCatLoading || isProductLoading;
        final tabsLength = showSkeleton ? 3 : categories.length;
 
-        return DefaultTabController(
+        if (state.categoriesState==RequestState.error || state.productsState==RequestState.error) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.error_outline,color: AppColors.redEC, size: 48),
+                const SizedBox(height: 10),
+                const Text(
+                "Something went wrong",
+                  style: TextStyle(fontSize: 16, color: Colors.black87),
+                ),
+                const SizedBox(height: 10),
+                AppButton(
+                  onPress: () {
+                      final cubit = context.read<HomeCubit>();
+                      cubit.fetchCategories();
+                      cubit.fetchProducts();
+                  },
+                  text: "Retry",
+                ),
+              ],
+            ),
+          );
+        }else {
+          return DefaultTabController(
           length: tabsLength,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,6 +141,7 @@ class CategoriesTabBar extends StatelessWidget {
             ],
           ),
         );
+        }
       },
     );
   }

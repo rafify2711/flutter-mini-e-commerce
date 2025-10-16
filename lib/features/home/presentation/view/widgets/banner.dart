@@ -3,11 +3,11 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class BannerWidget extends StatelessWidget {
-  String image;
-  String title;
-  String subtitle;
+ final String image;
+ final String title;
+ final String subtitle;
 
-   BannerWidget({
+   const BannerWidget({
     super.key,
     required this.image,
      required this.title,
@@ -33,11 +33,6 @@ class BannerWidget extends StatelessWidget {
             ),
             borderRadius: BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
             boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
             ],
           ),
           child: Row(

@@ -1,5 +1,5 @@
   import 'package:flutter/material.dart';
- import '../cart/presntation/view/cart_screen.dart';
+ import '../cart/presentation/view/cart_screen.dart';
 import '../favorite/favorite_screen.dart';
   import '../home/presentation/view/home_screen.dart';
   import '../profile/profile_screen.dart';

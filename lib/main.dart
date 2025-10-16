@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task/features/lay_out/lay_out.dart';
-
+import 'core/config/route_generator.dart';
+import 'core/config/routes_name.dart';
 import 'core/di/di.dart';
 
 void main() {
   runApp(const MyApp());
   configureDependencies();
 }
-
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mini E-Commerce',
-      home: LayOut(),
+      navigatorKey: navigatorKey,
+      initialRoute: RoutesName.layOut,
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.onGenerator,
     );
   }
 }
