@@ -15,9 +15,9 @@ git clone https://github.com/rafify2711/flutter-mini-e-commerce.git
 cd flutter-mini-e-commerce
 ```
 ### 2. Install dependencies and Run the app
-run :flutter pub get
-run :flutter pub run build_runner build --delete-conflicting-outputs
-run :flutter run
+- flutter pub get
+- flutter pub run build_runner build --delete-conflicting-outputs
+- flutter run
 
 ### API EndPoints 
 **Base URL:** `https://fakestoreapi.com`
@@ -67,7 +67,7 @@ lib/
 
 # The app uses Cubit (from the flutter_bloc package) because it provides:
 
-- 0Simple and predictable state transitions
+- Simple and predictable state transitions
 
 - Clear separation between UI and logic
 
