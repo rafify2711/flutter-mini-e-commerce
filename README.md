@@ -67,7 +67,7 @@ lib/
 
 # The app uses Cubit (from the flutter_bloc package) because it provides:
 
-- 0Simple and predictable state transitions
+- Simple and predictable state transitions
 
 - Clear separation between UI and logic
 
