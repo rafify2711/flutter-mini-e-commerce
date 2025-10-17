@@ -1,7 +1,7 @@
 # Flutter MiNI E-Commerce App
 
 A modern 3 Implemented Screen(Home,Cart,Product Details) for e-commerce application built using **Clean Architecture**, **Cubit** for state management, and a modular folder structure.  
-The app integrates with a REST API to fetch products, categories, and manage cart operations.
+The app integrates with a REST API to fetch products, categories, and manage cart operations, the app contains multiple languages (AR/EN) and unit tests for the home repo and use cases .
 
 ---
 
